@@ -11,6 +11,7 @@
 import fs = require('fs');
 import path = require('path');
 import os = require('os');
+import vscode = require('vscode');
 
 let binPathCache: { [bin: string]: string; } = {};
 let runtimePathCache: string = '';

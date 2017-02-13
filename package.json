@@ -281,6 +281,19 @@
           "default": "",
           "description": "The Go build tags to use for all commands that support a `-tags '...'` argument"
         },
+        "go.gaiOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run gai on save."
+        },
+        "go.gaiFlags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Flags to gai"
+        },
         "go.lintOnSave": {
           "type": "boolean",
           "default": true,

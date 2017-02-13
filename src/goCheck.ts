@@ -140,6 +140,18 @@ export function check(filename: string, goConfig: vscode.WorkspaceConfiguration)
 		});
 		runningToolsPromises.push(buildPromise);
 	}
+
+	if (!!goConfig['gaiOnSave']) {
+		let args = goConfig['gaiFlags'];
+		runningToolsPromises.push(runTool(
+			args,
+			cwd,
+			'error',
+			true,
+			'gai',
+			true
+		));
+	}
 	if (!!goConfig['lintOnSave']) {
 		let lintTool = goConfig['lintTool'] || 'golint';
 		let lintFlags = goConfig['lintFlags'] || [];
@@ -148,9 +160,10 @@ export function check(filename: string, goConfig: vscode.WorkspaceConfiguration)
 		runningToolsPromises.push(runTool(
 			args,
 			cwd,
-			'warning',
+			'error',
 			false,
-			lintTool
+			lintTool,
+			true
 		));
 	}
 
