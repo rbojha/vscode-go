@@ -139,8 +139,11 @@ export function check(filename: string, goConfig: vscode.WorkspaceConfiguration)
 			});
 		});
 		runningToolsPromises.push(buildPromise);
-	} else {
-		vscode.window.showInformationMessage('Trying to do something amazing');
+	}
+
+	if (goConfig['giwOnSave']) {
+		vscode.window.showInformationMessage('Trying to do something amazing ' + process.env['MODELOGIQ_DIR'] + '/go/scripts/giw.sh');
+		vscode.commands.executeCommand(process.env['MODELOGIQ_DIR'] + '/go/scripts/giw.sh');
 	}
 	if (!!goConfig['lintOnSave']) {
 		let lintTool = goConfig['lintTool'] || 'golint';

@@ -268,6 +268,11 @@
           "default": true,
           "description": "Run 'go build'/'go test -c' on save."
         },
+        "go.giwOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run 'go build'/'go test -c' on save."
+        },
         "go.buildFlags": {
           "type": "array",
           "items": {

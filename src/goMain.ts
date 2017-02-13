@@ -279,4 +279,3 @@ function startBuildOnSaveWatcher(subscriptions: vscode.Disposable[]) {
 	}, null, subscriptions);
 
 }
-

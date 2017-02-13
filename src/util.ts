@@ -9,7 +9,7 @@ import { getGoRuntimePath, getBinPathWithPreferredGopath, resolvePath} from './g
 import cp = require('child_process');
 import TelemetryReporter from 'vscode-extension-telemetry';
 
-const extensionId: string = 'lukehoban.Go';
+const extensionId: string = 'raviojha.Go';
 const extensionVersion: string = vscode.extensions.getExtension(extensionId).packageJSON.version;
 const aiKey: string = 'AIF-d9b70cd4-b9f9-4d70-929b-a071c400b217';
 
